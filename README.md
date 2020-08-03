@@ -1,4 +1,4 @@
-# MyTemplateWithSpringAndPersistence
+# CriteriaBuilder Demo
 Template project with SpringBoot, Flyway, Postgreqsql
 
 This projects' soul purpose is to have a base to create a SpringBoot, Flyway project in a couple of minutes.
@@ -21,7 +21,7 @@ Steps for getting started with it in Windows:
 $ createdb -h localhost -p 5433 -U postgres buyfood_db password *********
 
 5. Create SpringBoot application config with below details if you want to run the project from outside of a command line
-  - Main Class: com.remote.developers.TemplateProjectApplication
+  - Main Class: com.remote.developers.CriteriaBuilderDemoApplication
   - JRE: 11 (at least)
   - For more information on how to create more development environments in the project checkout this post: https://dev.to/gabriela/spring-boot-rest-api-and-flyway-migrations-a3a
 6. Try running the unit tests and the integration tests that already exist. They should pass, by the way :)

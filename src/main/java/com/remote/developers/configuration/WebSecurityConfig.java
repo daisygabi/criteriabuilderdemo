@@ -34,6 +34,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()//
                 .antMatchers(HttpMethod.OPTIONS, "**").permitAll()
                 .antMatchers("/api/v1/developers").permitAll()
+                .antMatchers(HttpMethod.GET, "**").permitAll()
+                .antMatchers(HttpMethod.POST, "**").permitAll()
+                .antMatchers(HttpMethod.PUT, "**").permitAll()
+                .antMatchers(HttpMethod.DELETE, "**").permitAll()
 
                 // Disallow everything else
                 .anyRequest().authenticated();

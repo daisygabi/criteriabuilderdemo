@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from persistence -->
     </parent>
     <groupId>com.remote.developers</groupId>
-    <artifactId>TemplateProject</artifactId>
+    <artifactId>CriteriaBuilderDemo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>TemplateProject</name>
-    <description>TemplateProject with SpringBoot, Flyway, PostgreSql</description>
+    <name>CriteriaBuilderDemo</name>
+    <description>Demo project with SpringBoot, Flyway, PostgreSql to showcase what CriteriaBuilder can do</description>
 
     <properties>
         <java.version>1.10</java.version>

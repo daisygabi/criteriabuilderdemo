@@ -6,19 +6,16 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "remote_dev")
+@Table(name = "trade")
 @Getter
 @Setter
-public class RemoteDeveloper extends DefaultDomain {
+public class Trade extends DefaultDomain {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "first_name")
-    private String firstName;
-
-    @Column(columnDefinition = "last_name")
-    private String lastName;
+    @Column(columnDefinition = "name")
+    private String name;
 }
 

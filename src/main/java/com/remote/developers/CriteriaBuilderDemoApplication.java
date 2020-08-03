@@ -8,12 +8,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing
-public class TemplateProjectApplication {
+public class CriteriaBuilderDemoApplication {
 
     @Bean
     public ModelMapper modelMapper() { return new ModelMapper(); }
 
     public static void main(String[] args) {
-        SpringApplication.run(TemplateProjectApplication.class, args);
+        SpringApplication.run(CriteriaBuilderDemoApplication.class, args);
     }
 }

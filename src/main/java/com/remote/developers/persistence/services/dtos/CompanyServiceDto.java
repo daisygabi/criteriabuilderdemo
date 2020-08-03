@@ -5,9 +5,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class RemoteDeveloperDto {
+public class CompanyServiceDto {
 
     private Long id;
-    private String firstName;
-    private String lastName;
+    private Long tradeId;
+    private Long companyId;
 }
