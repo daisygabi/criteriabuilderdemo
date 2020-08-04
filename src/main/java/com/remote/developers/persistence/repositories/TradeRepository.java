@@ -1,19 +1,67 @@
 package com.remote.developers.persistence.repositories;
 
 import com.remote.developers.persistence.domain.Trade;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import com.remote.developers.persistence.services.SearchCriteria;
+import com.remote.developers.persistence.services.UserSearchQueryCriteriaConsumer;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
-public interface TradeRepository extends JpaRepository<Trade, Long> {
+public class TradeRepository implements TradeRepositoryInterface {
 
-    @Query("SELECT dev FROM Trade dev where dev.firstName = ?1")
-    List<Trade> getAllRemoteDeveloperWithTheSameLastName(String firstName);
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    @Query("SELECT dev from Trade dev where lower(dev.firstName) LIKE %:input% or lower(dev.lastName) LIKE %:input%")
-    List<Trade> findByTextInput(@Param("input") String input);
+    @Override
+    public Optional<List<Trade>> findAllTradesWithNameSimilarTo(String tradeName) {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Trade> criteriaQuery = criteriaBuilder.createQuery(Trade.class);
+        Root<Trade> root = criteriaQuery.from(Trade.class);
+        criteriaQuery.select(root).where(criteriaBuilder.like(root.get("name"), "%" + tradeName + "%"));
+
+        Query query = entityManager.createQuery(criteriaQuery);
+        List<Trade> results = query.getResultList();
+
+        return Optional.of(results);
+    }
+
+    @Override
+    public Optional<List<Trade>> findAllTradesWithNameEndingWith(String tradeName) {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Trade> criteriaQuery = criteriaBuilder.createQuery(Trade.class);
+        Root<Trade> root = criteriaQuery.from(Trade.class);
+        criteriaQuery.select(root).where(criteriaBuilder.like(root.get("name"), "%" + tradeName));
+
+        Query query = entityManager.createQuery(criteriaQuery);
+        List<Trade> results = query.getResultList();
+
+        return Optional.of(results);
+    }
+
+    @Override
+    public Optional<List<Trade>> findAllTrades() {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Trade> criteriaQuery = criteriaBuilder.createQuery(Trade.class);
+        Root<Trade> root = criteriaQuery.from(Trade.class);
+        criteriaQuery.select(root);
+
+        Query query = entityManager.createQuery(criteriaQuery);
+        List<Trade> results = query.getResultList();
+
+        return Optional.of(results);
+    }
+
+    @Override
+    public void save(Trade entity) {
+        entityManager.persist(entity);
+    }
 }

@@ -18,4 +18,3 @@ public class Trade extends DefaultDomain {
     @Column(columnDefinition = "name")
     private String name;
 }
-

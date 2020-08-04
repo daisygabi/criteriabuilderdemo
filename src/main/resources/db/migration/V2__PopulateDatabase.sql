@@ -23,6 +23,7 @@ INSERT INTO "trade"(id, name, created_at, updated_at)
 VALUES (6, 'Executive', '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000');
 INSERT INTO "trade"(id, name, created_at, updated_at)
 VALUES (7, 'Product Owner', '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000');
+ALTER SEQUENCE trade_id_seq RESTART WITH 9;
 
 -- Current Company Services --
 INSERT INTO "company_service"(id, trade_id, company_id, created_at, updated_at)
