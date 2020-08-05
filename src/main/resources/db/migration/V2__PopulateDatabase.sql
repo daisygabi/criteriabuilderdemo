@@ -50,8 +50,14 @@ VALUES (2, 'Michel Purple', 'purple@email.com', 'Gadnz', 'Poland', '+242534354',
 ALTER SEQUENCE user_id_seq RESTART WITH 4;
 
 -- Users looking to buy a service --
-INSERT INTO "user_request_service"(id, user_id, handyman_id, created_at, updated_at)
-VALUES (1, 1, 2, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000');
-INSERT INTO "user_request_service"(id, user_id, handyman_id, created_at, updated_at)
-VALUES (2, 2, 1, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000');
-ALTER SEQUENCE user_request_service_id_seq RESTART WITH 4;
+INSERT INTO "user_request_service"(id, user_id, handyman_id, created_at, updated_at, request_status)
+VALUES (1, 1, 2, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000', 0);
+INSERT INTO "user_request_service"(id, user_id, handyman_id, created_at, updated_at, request_status, user_feedback_title)
+VALUES (2, 2, 1, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000', 1, 'Going good so far');
+INSERT INTO "user_request_service"(id, user_id, handyman_id, created_at, updated_at, request_status, user_feedback_description)
+VALUES (3, 2, 1, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000', 0, 'What a pleasure to work with this person');
+INSERT INTO "user_request_service"(id, user_id, handyman_id, created_at, updated_at, request_status)
+VALUES (4, 1, 1, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000', 2);
+INSERT INTO "user_request_service"(id, user_id, handyman_id, created_at, updated_at, request_status, user_feedback_title)
+VALUES (5, 1, 1, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000', 6, 'False advertising');
+ALTER SEQUENCE user_request_service_id_seq RESTART WITH 10;

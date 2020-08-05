@@ -20,5 +20,14 @@ public class UserRequestService extends DefaultDomain {
 
     @Column(columnDefinition = "handyman_id")
     private Long handymanId;
+
+    @Column(columnDefinition = "request_status")
+    private String requestStatus;
+
+    @Column(columnDefinition = "user_feedback_title")
+    private String userFeedbackTitle;
+
+    @Column(columnDefinition = "user_feedback_description")
+    private String userFeedbackDescription;
 }
 

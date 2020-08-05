@@ -9,4 +9,7 @@ public class UserRequestServiceDto {
     private Long id;
     private Long userId;
     private Long handymanId;
+    private String requestStatus;
+    private String userFeedbackTitle;
+    private String userFeedbackDescription;
 }

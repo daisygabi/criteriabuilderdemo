@@ -99,6 +99,15 @@ create table user_request_service
     updated_at  timestamp
 );
 
+alter table user_request_service
+    add request_status int default 0 not null;
+
+alter table user_request_service
+    add user_feedback_description varchar;
+
+alter table user_request_service
+    add user_feedback_title varchar;
+
 create unique index user_request_service_id_uindex
     on user_request_service (id);
 
