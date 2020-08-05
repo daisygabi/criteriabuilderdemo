@@ -1,6 +1,8 @@
 package com.remote.developers.persistence.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -9,7 +11,14 @@ import javax.persistence.*;
 @Table(name = "company_handy_person")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class CompanyHandyPerson extends DefaultDomain {
+
+    public CompanyHandyPerson(String comment, Long id) {
+        this.comment = comment;
+        this.id = id;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,5 +32,8 @@ public class CompanyHandyPerson extends DefaultDomain {
 
     @Column(columnDefinition = "trade_id")
     private Long tradeId;
+
+    @Column(columnDefinition = "comment")
+    private String comment;
 }
 

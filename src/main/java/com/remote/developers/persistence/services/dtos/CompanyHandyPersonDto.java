@@ -11,4 +11,5 @@ public class CompanyHandyPersonDto {
     private String fullName;
     private Long companyId;
     private Long tradeId;
+    private String comment;
 }

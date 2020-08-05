@@ -117,6 +117,9 @@ create table company_handy_person
     updated_at timestamp
 );
 
+alter table company_handy_person
+    add comment varchar;
+
 create unique index company_handy_person_id_uindex
     on company_handy_person (id);
 
