@@ -34,10 +34,10 @@ VALUES (2, 3, 2, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000');
 ALTER SEQUENCE company_service_id_seq RESTART WITH 4;
 
 -- Company employees --
-INSERT INTO "company_handy_person"(id, full_name, company_id, trade_id, created_at, updated_at)
-VALUES (1, 'Gigel Smith', 1, 1, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000');
-INSERT INTO "company_handy_person"(id, full_name, company_id, trade_id, created_at, updated_at)
-VALUES (2, 'Mark Dom', 1, 3, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000');
+INSERT INTO "company_handy_person"(id, full_name, company_id, trade_id, created_at, updated_at, comment)
+VALUES (1, 'Gigel Smith', 1, 1, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000', 'a comment');
+INSERT INTO "company_handy_person"(id, full_name, company_id, trade_id, created_at, updated_at, comment)
+VALUES (2, 'Mark Dom', 1, 3, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000', 'another comment');
 ALTER SEQUENCE company_handy_person_id_seq RESTART WITH 4;
 
 -- Users that have an account --
