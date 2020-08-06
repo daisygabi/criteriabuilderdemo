@@ -6,10 +6,10 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "platform_user")
 @Getter
 @Setter
-public class User extends DefaultDomain {
+public class PlatformUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -26,14 +26,14 @@ INSERT INTO "trade"(id, name, created_at, updated_at)
 VALUES (7, 'Product Owner', '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000');
 ALTER SEQUENCE trade_id_seq RESTART WITH 9;
 
--- Current Company Services --
+-- Current jobs --
 INSERT INTO "company_service"(id, trade_id, company_id, created_at, updated_at)
 VALUES (1, 1, 3, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000');
 INSERT INTO "company_service"(id, trade_id, company_id, created_at, updated_at)
 VALUES (2, 3, 2, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000');
 ALTER SEQUENCE company_service_id_seq RESTART WITH 4;
 
--- Company employees --
+-- Company handy persons --
 INSERT INTO "company_handy_person"(id, full_name, company_id, trade_id, created_at, updated_at, comment)
 VALUES (1, 'Gigel Smith', 1, 1, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.000000', 'a comment');
 INSERT INTO "company_handy_person"(id, full_name, company_id, trade_id, created_at, updated_at, comment)
@@ -41,11 +41,14 @@ VALUES (2, 'Mark Dom', 1, 3, '2020-08-03 15:57:22.000000', '2020-08-03 15:57:22.
 ALTER SEQUENCE company_handy_person_id_seq RESTART WITH 4;
 
 -- Users that have an account --
-INSERT INTO "user"(id, full_name, email, city, country, phone, created_at, updated_at)
+INSERT INTO platform_user(id, full_name, email, city, country, phone, created_at, updated_at)
 VALUES (1, 'Twain Boat', 'twain@email.com', 'Bled', 'Slovenia', '+3425354', '2020-08-03 15:57:22.000000',
         '2020-08-03 15:57:22.000000');
-INSERT INTO "user"(id, full_name, email, city, country, phone, created_at, updated_at)
+INSERT INTO platform_user(id, full_name, email, city, country, phone, created_at, updated_at)
 VALUES (2, 'Michel Purple', 'purple@email.com', 'Gadnz', 'Poland', '+242534354', '2020-08-03 15:57:22.000000',
+        '2020-08-03 15:57:22.000000');
+INSERT INTO platform_user(id, full_name, email, city, country, phone, created_at, updated_at)
+VALUES (3, 'Nobody Under The Sun', 'maketechinclusive@email.com', 'Europe', 'EU', '+122534354', '2020-08-03 15:57:22.000000',
         '2020-08-03 15:57:22.000000');
 ALTER SEQUENCE user_id_seq RESTART WITH 4;
 

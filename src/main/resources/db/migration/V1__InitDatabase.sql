@@ -62,7 +62,7 @@ create table company_service
 );
 
 -- --
-create table "user"
+create table platform_user
 (
     id         bigserial           not null,
     full_name  varchar default 100 not null,
@@ -74,18 +74,18 @@ create table "user"
     updated_at timestamp
 );
 
-comment on table "user" is 'user that wants to look for a service';
+comment on table platform_user is 'user that wants to look for a service';
 
 create unique index user_email_uindex
-    on "user" (email);
+    on platform_user (email);
 
 create unique index user_id_uindex
-    on "user" (id);
+    on platform_user (id);
 
 create unique index user_phone_uindex
-    on "user" (phone);
+    on platform_user (phone);
 
-alter table "user"
+alter table platform_user
     add constraint user_pk
         primary key (id);
 

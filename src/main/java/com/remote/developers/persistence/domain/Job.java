@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "user_request_service")
 @Getter
 @Setter
-public class UserRequestService extends DefaultDomain {
+public class Job extends DefaultDomain {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
