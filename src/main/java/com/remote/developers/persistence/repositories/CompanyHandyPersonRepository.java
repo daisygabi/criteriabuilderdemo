@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class CompanyHandPersonRepository implements CompanyHandyPersonRepositoryInterface {
+public class CompanyHandyPersonRepository implements CompanyHandyPersonRepositoryInterface {
 
     @PersistenceContext
     private EntityManager entityManager;

@@ -14,13 +14,13 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @FlywayTest
-public class CompanyHandPersonRepositoryTest extends BasicRepositoryTest {
+public class CompanyHandyPersonRepositoryTest extends BasicRepositoryTest {
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
     @Autowired
-    private CompanyHandPersonRepository repository;
+    private CompanyHandyPersonRepository repository;
 
     @Test
     void findCompanyHandyPeopleThatHaveOneOfTheGivenTradeId_WithValidData_ShouldReturnOnePerson() {
