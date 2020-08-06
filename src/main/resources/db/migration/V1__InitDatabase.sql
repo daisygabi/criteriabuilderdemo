@@ -76,17 +76,17 @@ create table platform_user
 
 comment on table platform_user is 'user that wants to look for a service';
 
-create unique index user_email_uindex
+create unique index platform_user_email_uindex
     on platform_user (email);
 
-create unique index user_id_uindex
+create unique index platform_user_id_uindex
     on platform_user (id);
 
-create unique index user_phone_uindex
+create unique index platform_user_phone_uindex
     on platform_user (phone);
 
 alter table platform_user
-    add constraint user_pk
+    add constraint platform_user_pk
         primary key (id);
 
 -- --

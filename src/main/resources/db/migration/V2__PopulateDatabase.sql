@@ -50,7 +50,7 @@ VALUES (2, 'Michel Purple', 'purple@email.com', 'Gadnz', 'Poland', '+242534354',
 INSERT INTO platform_user(id, full_name, email, city, country, phone, created_at, updated_at)
 VALUES (3, 'Nobody Under The Sun', 'maketechinclusive@email.com', 'Europe', 'EU', '+122534354', '2020-08-03 15:57:22.000000',
         '2020-08-03 15:57:22.000000');
-ALTER SEQUENCE user_id_seq RESTART WITH 4;
+ALTER SEQUENCE platform_user_id_seq RESTART WITH 4;
 
 -- Users looking to buy a service --
 INSERT INTO "user_request_service"(id, user_id, handyman_id, created_at, updated_at, request_status)
