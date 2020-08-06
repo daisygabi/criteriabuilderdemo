@@ -12,5 +12,5 @@ public interface JobInterface {
 
     Optional<List<String>> findAllFeedbackThatExists();
 
-    Optional<List<PlatformUser>> findJobsThatAreInProgress();
+    Optional<List<PlatformUser>> findUsersThatHaveJobsInProgress();
 }

@@ -48,23 +48,20 @@ public class JobRepository implements JobInterface {
     }
 
     @Override
-    public Optional<List<PlatformUser>> findJobsThatAreInProgress() {
+    public Optional<List<PlatformUser>> findUsersThatHaveJobsInProgress() {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 
         CriteriaQuery<PlatformUser> userCriteriaQuery = criteriaBuilder.createQuery(PlatformUser.class);
         Root<PlatformUser> userRoot = userCriteriaQuery.from(PlatformUser.class);
 
         // Select user and job by user id
-        Subquery<Job> jobSubquery = userCriteriaQuery.subquery(Job.class);
-        Root<Job> jobRoot = jobSubquery.from(Job.class);
-        jobSubquery.select(jobRoot).where(criteriaBuilder.equal(jobRoot.get("userId"), userRoot.get("id")));
-        userCriteriaQuery.select(userRoot).where(criteriaBuilder.exists(jobSubquery));
+        Subquery<Job> jobSubQuery = userCriteriaQuery.subquery(Job.class);
+        Root<Job> jobRoot = jobSubQuery.from(Job.class);
+        jobSubQuery.select(jobRoot).where(criteriaBuilder.equal(jobRoot.get("userId"), userRoot.get("id")));
+        userCriteriaQuery.select(userRoot).where(criteriaBuilder.exists(jobSubQuery));
 
         TypedQuery<PlatformUser> typedQuery = entityManager.createQuery(userCriteriaQuery);
         List<PlatformUser> resultList = typedQuery.getResultList();
-
-//        Query query = entityManager.createQuery(userCriteriaQuery);
-//        List<User> resultList = query.getResultList();
 
         return Optional.of(resultList);
     }

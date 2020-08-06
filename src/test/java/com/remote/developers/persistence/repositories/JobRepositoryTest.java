@@ -32,8 +32,9 @@ public class JobRepositoryTest extends BasicRepositoryTest {
 
     @Test
     public void findJobsThatAreInProgress_WithValidData_ShouldReturn() {
-        Optional<List<PlatformUser>> result = repository.findJobsThatAreInProgress();
+        Optional<List<PlatformUser>> result = repository.findUsersThatHaveJobsInProgress();
 
         assertThat(result.get()).isNotEmpty();
+        assertThat(result.get().size()).isEqualTo(2);
     }
 }
